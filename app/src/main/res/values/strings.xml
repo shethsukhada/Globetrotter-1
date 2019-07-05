@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">globetrotter</string>
+    <string name="email_login">Email</string>
+    <string name="password">Password</string>
+    <string name="next">Next</string>
+    <string name="cancel">Cancel</string>
+
+</resources>
