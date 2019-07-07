@@ -5,4 +5,14 @@
     <string name="next">Next</string>
     <string name="cancel">Cancel</string>
 
+    <string name="asai">Asai</string>
+    <string name="africa">Africa</string>
+    <string name="europe">Europe</string>
+    <string name="northAmeria">North Ameria </string>
+    <string name="southAmeria">South Ameria</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
