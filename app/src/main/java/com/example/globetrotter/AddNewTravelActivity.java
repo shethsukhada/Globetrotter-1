@@ -17,23 +17,10 @@ public class AddNewTravelActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_travel);
-        initFirebase();
-        readData();
-    }
-
-
-
-    private void initFirebase() {
-        mApp = FirebaseApp.getInstance();
-        mDatabase = FirebaseDatabase.getInstance(mApp);
 
     }
 
-    private void readData() {
-    }
 
-    private void writeData(){
-        DatabaseReference ref = mDatabase.getReference("travelD").child("datetime");
 
-    }
+
 }
