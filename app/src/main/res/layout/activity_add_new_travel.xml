@@ -112,9 +112,10 @@
         </FrameLayout>
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/checkList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="clickList"
             android:text="check list" />
 
     </LinearLayout>

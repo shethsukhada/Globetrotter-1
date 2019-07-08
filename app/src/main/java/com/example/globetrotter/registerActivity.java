@@ -50,7 +50,6 @@ public class registerActivity extends AppCompatActivity {
         String myPassword = password.getText().toString();
 
 
-
         mAuth.signInWithEmailAndPassword(myemail, myPassword)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override

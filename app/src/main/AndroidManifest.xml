@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".AddActivity"></activity>
+        <activity
+            android:name=".checkListActivity"
+            android:label="@string/title_activity_check_list"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".registerActivity" />
         <activity android:name=".AddNewTravelActivity" />
         <activity android:name=".LoginActivity" />
