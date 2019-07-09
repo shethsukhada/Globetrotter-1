@@ -16,10 +16,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class registerActivity extends AppCompatActivity {
+public class registerActivity extends AppCompatActivity implements
+        View.OnClickListener {
 
-    TextInputEditText email;
-    TextInputEditText password;
+    TextInputEditText u_email;
+    TextInputEditText u_password;
 
     private FirebaseAuth mAuth;
 
@@ -29,28 +30,34 @@ public class registerActivity extends AppCompatActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-//        updateUI(currentUser);
+        //updateUI(currentUser);
     }
 
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
-        email = findViewById(R.id.emil);
-        password = findViewById(R.id.password);
+        u_email = findViewById(R.id.emil);
+        u_password = findViewById(R.id.password);
+
+        // Buttons sukhada
+        findViewById(R.id.login_button).setOnClickListener(this);
+        findViewById(R.id.register_button).setOnClickListener(this);
+
     }
 
-    public void login(View view){
-        String myemail = email.getText().toString();
-        String myPassword = password.getText().toString();
+    //modified the signature of method by sukhada
+    public void login(String email, String password){
+        //String myemail = u_email.getText().toString();
+        //String myPassword = u_password.getText().toString();
 
 
-        mAuth.signInWithEmailAndPassword(myemail, myPassword)
+        mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -58,6 +65,7 @@ public class registerActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("TAG", "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            //modified the intent to different page sukhada
                             Intent intent = new Intent(registerActivity.this,MainActivity.class);
                             startActivity(intent);
 //                            updateUI(user);
@@ -75,14 +83,15 @@ public class registerActivity extends AppCompatActivity {
 
     }
 
-    public void register(View view){
+    //modified the signature of method by sukhada
+    public void register(String email, String password){
 
-        String myemail = email.getText().toString();
-        String myPassword = password.getText().toString();
+        //String myemail = u_email.getText().toString();
+        //String myPassword = u_password.getText().toString();
 
 
-        mAuth.createUserWithEmailAndPassword(myemail, myPassword)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
@@ -90,12 +99,13 @@ public class registerActivity extends AppCompatActivity {
                             Log.d("TAG", "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
 //                            updateUI(user);
+                            //modified the intent to different page sukhada
                             Intent intent = new Intent(registerActivity.this,MainActivity.class);
                             startActivity(intent);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("TAG", "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(registerActivity.this, "Authentication failed.",
+                            Toast.makeText(registerActivity.this, "Registration failed.",
                                     Toast.LENGTH_SHORT).show();
 //                            updateUI(null);
                         }
@@ -103,5 +113,16 @@ public class registerActivity extends AppCompatActivity {
                         // ...
                     }
                 });
+    }
+
+    // added by sukhada
+    @Override
+    public void onClick(View v) {
+        int i = v.getId();
+        if (i == R.id.login_button) {
+            login(u_email.getText().toString(), u_password.getText().toString());
+        } else if (i == R.id.register_button) {
+            register(u_email.getText().toString(), u_password.getText().toString());
+        }
     }
 }

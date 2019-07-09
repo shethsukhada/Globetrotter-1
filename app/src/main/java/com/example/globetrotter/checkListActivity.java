@@ -15,9 +15,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListAdapter;
 import android.widget.TextView;
 
 public class checkListActivity extends AppCompatActivity {
+
+    ListHelper helper;
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,16 +40,71 @@ public class checkListActivity extends AppCompatActivity {
             }
         });
 
-//        RecyclerView recyclerView = findViewById(R.id.recycler);
-//        recyclerView.hasFixedSize();
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        ListHelper helper = new ListHelper(this);
-//        Cursor cursor = helper.getReadableDatabase()
-//                .query("checklist", null,null,null,null,null,null);
-//
-//        listAdapter adapter = new listAdapter(cursor);
-//        recyclerView.setAdapter(adapter);
-//    }
+        recyclerView = findViewById(R.id.recycler);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        helper = new ListHelper(this);
+        Cursor cursor = helper.getReadableDatabase()
+                .query("checklist", null, null,
+                        null, null, null, null);
+        checkListAdapter adapter = new checkListAdapter(cursor);
+        recyclerView.setAdapter(adapter);
+    }
+
+
+    protected void onResume() {
+
+        super.onResume();
+        Cursor cursor = helper.getReadableDatabase().query("checklist", null, null,
+                null, null, null, null);
+        checkListAdapter adapter = new checkListAdapter(cursor);
+        recyclerView.setAdapter(adapter);
+    }
+
+
+    public class checkListAdapter extends RecyclerView.Adapter<checkListAdapter.checkListHolder>{
+        Cursor cursor;
+        public checkListAdapter(Cursor cursor) {
+        this.cursor = cursor;
+        }
+
+        @NonNull
+        @Override
+        public checkListHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            View view = getLayoutInflater().inflate(R.layout.check_item,parent,false);
+
+
+            return new checkListHolder(view);
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull checkListHolder holder, int position) {
+            cursor.moveToPosition(position);
+            String item = cursor.getString(cursor.getColumnIndex("citem"));
+            int amount = cursor.getInt(cursor.getColumnIndex("amount"));
+//            holder.itemText.setText(item);
+//            holder.itemAmount.setText(String.valueOf(amount));
+
+        }
+
+        @Override
+        public int getItemCount() {
+            return cursor.getCount();
+        }
+
+        public class checkListHolder extends RecyclerView.ViewHolder{
+            TextView itemText;
+            TextView itemAmount;
+
+            public checkListHolder(@NonNull View itemView) {
+                super(itemView);
+
+                itemText = findViewById(R.id.item_add);
+                itemAmount = findViewById(R.id.item_amount);
+            }
+        }
+    }
+
 //
 //
 //    public class listAdapter extends RecyclerView.Adapter<listAdapter.listHolder>{
@@ -84,5 +143,5 @@ public class checkListActivity extends AppCompatActivity {
 //                itemList = findViewById(R.id.item1);
 //            }
 //        }
-    }
+
 }

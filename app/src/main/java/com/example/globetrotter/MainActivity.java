@@ -29,11 +29,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (!login){
-            Intent intent = new Intent(this,registerActivity.class);
-            startActivityForResult(intent,RESULT_LOGIN);
-        }
-
 
 
         FloatingActionButton fab = (FloatingActionButton)findViewById(R.id.flo);
