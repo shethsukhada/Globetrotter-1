@@ -8,7 +8,7 @@ public class ListHelper extends SQLiteOpenHelper {
 
 
     public ListHelper(Context context){
-        this(context,"checklist",null,1);
+        this(context,"check",null,1);
     }
 
     private ListHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {

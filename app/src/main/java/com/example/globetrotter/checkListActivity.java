@@ -5,7 +5,6 @@ import android.database.Cursor;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListAdapter;
 import android.widget.TextView;
 
 public class checkListActivity extends AppCompatActivity {
@@ -82,8 +80,9 @@ public class checkListActivity extends AppCompatActivity {
             cursor.moveToPosition(position);
             String item = cursor.getString(cursor.getColumnIndex("citem"));
             int amount = cursor.getInt(cursor.getColumnIndex("amount"));
-//            holder.itemText.setText(item);
-//            holder.itemAmount.setText(String.valueOf(amount));
+            holder.infoText.setText(item);
+            holder.amountText.setText(String.valueOf(amount));
+
 
         }
 
@@ -92,56 +91,21 @@ public class checkListActivity extends AppCompatActivity {
             return cursor.getCount();
         }
 
+
+
         public class checkListHolder extends RecyclerView.ViewHolder{
-            TextView itemText;
-            TextView itemAmount;
+            TextView infoText;
+            TextView amountText;
 
             public checkListHolder(@NonNull View itemView) {
                 super(itemView);
 
-                itemText = findViewById(R.id.item_add);
-                itemAmount = findViewById(R.id.item_amount);
+                infoText = itemView.findViewById(R.id.item_info);
+                amountText = itemView.findViewById(R.id.item_amount);
             }
         }
     }
 
-//
-//
-//    public class listAdapter extends RecyclerView.Adapter<listAdapter.listHolder>{
-//
-//        Cursor cursor;
-//        public listAdapter(Cursor cursor){
-//            this.cursor = cursor;
-//        }
-//        @NonNull
-//        @Override
-//        public listHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//
-//
-//            View view = getLayoutInflater().inflate(R.layout.check_item,parent,false);
-//            return new listHolder(view);
-//        }
-//
-//        @Override
-//        public void onBindViewHolder(@NonNull listHolder holder, int position) {
-//            cursor.moveToPosition(position);
-//            String item = cursor.getString(cursor.getColumnIndex("cdata"));
-//            holder.itemList.setText(item);
-//
-//        }
-//
-//        @Override
-//        public int getItemCount() {
-//            return cursor.getCount();
-//        }
-//
-//        public class listHolder extends RecyclerView.ViewHolder{
-//            TextView itemList;
-//
-//            public listHolder(@NonNull View itemView) {
-//                super(itemView);
-//                itemList = findViewById(R.id.item1);
-//            }
-//        }
+
 
 }
