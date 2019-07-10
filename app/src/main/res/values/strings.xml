@@ -5,11 +5,11 @@
     <string name="next">Next</string>
     <string name="cancel">Cancel</string>
 
-    <string name="asai">Asai</string>
+    <string name="asai">Asia</string>
     <string name="africa">Africa</string>
     <string name="europe">Europe</string>
-    <string name="northAmeria">North Ameria </string>
-    <string name="southAmeria">South Ameria</string>
+    <string name="northAmeria">North America </string>
+    <string name="southAmeria">South America</string>
 
     <string name="country_city">city name</string>
     <string name="travel_date">2019/04/06~2019/08/07</string>
@@ -18,5 +18,59 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_check_list">checkListActivity</string>
+
+
+    <string-array name="asia_array">
+        <item>India</item>
+        <item>China</item>
+        <item>Vietnam</item>
+        <item>Singapore</item>
+        <item>Thailand</item>
+        <item>Japan</item>
+        <item>Hong Kong</item>
+        <item>Indonesia</item>
+    </string-array>
+
+
+    <string-array name="africa_array">
+        <item>South Africa</item>
+        <item>Nigeria</item>
+        <item>Morocco</item>
+        <item>Kenya</item>
+        <item>Ghana</item>
+    </string-array>
+
+
+    <string-array name="europe_array">
+        <item>Germany</item>
+        <item>France</item>
+        <item>Italy</item>
+        <item>Spain</item>
+        <item>Greece</item>
+        <item>Switzerland</item>
+        <item>Netherlands</item>
+        <item>Poland</item>
+    </string-array>
+
+
+    <string-array name="north_america_array">
+        <item>United States</item>
+        <item>Canada</item>
+        <item>Mexico</item>
+        <item>Cuba</item>
+        <item>Greenland</item>
+        <item>Dominican Republic</item>
+        <item>Costa Rica</item>
+    </string-array>
+
+    <string-array name="south_america_array">
+        <item>Brazil</item>
+        <item>Peru</item>
+        <item>Chile</item>
+        <item>Mars</item>
+        <item>Colombia</item>
+        <item>Argentina</item>
+    </string-array>
+
 
 </resources>
