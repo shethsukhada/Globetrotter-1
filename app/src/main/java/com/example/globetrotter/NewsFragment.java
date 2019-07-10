@@ -23,7 +23,7 @@ import java.util.List;
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
  */
-public class TravelPlanFragment extends Fragment {
+public class NewsFragment extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -35,13 +35,13 @@ public class TravelPlanFragment extends Fragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public TravelPlanFragment() {
+    public NewsFragment() {
     }
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static TravelPlanFragment newInstance(int columnCount) {
-        TravelPlanFragment fragment = new TravelPlanFragment();
+    public static NewsFragment newInstance(int columnCount) {
+        NewsFragment fragment = new NewsFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
@@ -60,7 +60,7 @@ public class TravelPlanFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_travelplan_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_news_list, container, false);
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -71,7 +71,7 @@ public class TravelPlanFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new TravelPlanRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new NewsRecyclerViewAdapter(DummyContent.ITEMS, mListener));
         }
         return view;
     }
@@ -106,6 +106,6 @@ public class TravelPlanFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onTravelListFragmentInteraction(DummyItem item);
+        void onNewsListFragmentInteraction(DummyItem item);
     }
 }

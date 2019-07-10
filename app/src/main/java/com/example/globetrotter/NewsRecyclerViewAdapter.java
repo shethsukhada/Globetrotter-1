@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.globetrotter.TravelPlanFragment.OnListFragmentInteractionListener;
+import com.example.globetrotter.NewsFragment.OnListFragmentInteractionListener;
 import com.example.globetrotter.dummy.DummyContent.DummyItem;
 
 import java.util.List;
@@ -17,12 +17,12 @@ import java.util.List;
  * specified {@link OnListFragmentInteractionListener}.
  * TODO: Replace the implementation with code for your data type.
  */
-public class TravelPlanRecyclerViewAdapter extends RecyclerView.Adapter<TravelPlanRecyclerViewAdapter.ViewHolder> {
+public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerViewAdapter.ViewHolder> {
 
     private final List<DummyItem> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    public TravelPlanRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
+    public NewsRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -30,7 +30,7 @@ public class TravelPlanRecyclerViewAdapter extends RecyclerView.Adapter<TravelPl
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_travelplan, parent, false);
+                .inflate(R.layout.fragment_news, parent, false);
         return new ViewHolder(view);
     }
 
@@ -46,7 +46,7 @@ public class TravelPlanRecyclerViewAdapter extends RecyclerView.Adapter<TravelPl
                 if (null != mListener) {
                     // Notify the active callbacks interface (the activity, if the
                     // fragment is attached to one) that an item has been selected.
-                    mListener.onTravelListFragmentInteraction(holder.mItem);
+                    mListener.onNewsListFragmentInteraction(holder.mItem);
                 }
             }
         });
