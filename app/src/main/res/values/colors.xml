@@ -6,4 +6,6 @@
     <color name="secondPrimary">#82b1ff</color>
     <color name="secondPrimaryDark">#4d82cb</color>
     <color name="secondlightt">#b6e3ff</color>
+    <color name="white">#ffffff</color>
+    <color name="cardView">#AFDCEF</color>
 </resources>

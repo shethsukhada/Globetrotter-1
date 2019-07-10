@@ -3,6 +3,7 @@ package com.example.globetrotter;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
@@ -13,7 +14,7 @@ import android.view.View;
 import com.example.globetrotter.dummy.DummyContent;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class MainActivity extends AppCompatActivity implements MapViewFragment.OnFragmentInteractionListener, TravelPlanFragment.OnListFragmentInteractionListener{
+public class MainActivity extends AppCompatActivity implements MapViewFragment.OnFragmentInteractionListener, TravelPlanFragment.OnListFragmentInteractionListener,NewsFragment.OnListFragmentInteractionListener {
 
     ViewPager mViewPager;
     FragmentAdapter adapter;
@@ -51,6 +52,11 @@ public class MainActivity extends AppCompatActivity implements MapViewFragment.O
 
     @Override
     public void onTravelListFragmentInteraction(DummyContent.DummyItem item) {
+
+    }
+
+    @Override
+    public void onNewsListFragmentInteraction(DummyContent.DummyItem item) {
 
     }
 }
