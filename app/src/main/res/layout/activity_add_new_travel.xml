@@ -31,7 +31,7 @@
                 android:layout_alignParentRight="true"
                 android:text="@string/asai" />
             <Button
-                android:id="@+id/africai"
+                android:id="@+id/africa"
                 android:layout_width="match_parent"
                 android:layout_weight="3"
                 android:layout_height="wrap_content"
@@ -47,35 +47,53 @@
                 android:layout_alignParentRight="true"
                 android:text="@string/europe" />
         </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/northAmeria"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:text="@string/northAmeria" />
-        <Button
-            android:id="@+id/south"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:text="@string/southAmeria" />
+            <Button
+                android:id="@+id/northAmerica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="@string/northAmeria" />
+            <Button
+                android:id="@+id/southAmerica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="@string/southAmeria" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView3"
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="country"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="191dp"
+                android:layout_height="match_parent"
+                android:text="country"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <Spinner
+                android:id="@+id/country_spinner"
+                android:layout_width="201dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
