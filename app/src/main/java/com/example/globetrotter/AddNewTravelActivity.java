@@ -8,17 +8,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class AddNewTravelActivity extends AppCompatActivity implements View.OnClickListener {
 
-    FirebaseApp mApp;
+    FirebaseApp Globetrotter;
     FirebaseDatabase mDatabase;
+    EditText u_city;
+    String u_country;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +35,7 @@ public class AddNewTravelActivity extends AppCompatActivity implements View.OnCl
         findViewById(R.id.northAmerica).setOnClickListener(this);
         findViewById(R.id.southAmerica).setOnClickListener(this);
         findViewById(R.id.europe).setOnClickListener(this);
-
+        findViewById(R.id.saveTravel).setOnClickListener(this);
         addListenerOnSpinnerItemSelection();
 
     }
@@ -39,6 +43,16 @@ public class AddNewTravelActivity extends AppCompatActivity implements View.OnCl
     public void clickList(View view) {
         Intent intent = new Intent(this, checkListActivity.class);
         startActivity(intent);
+    }
+
+    public void saveTravel(){
+        u_country =  CustomOnItemSelectedListener.g_city;
+        u_city = findViewById(R.id.city1);
+        String city = u_city.getText().toString();
+        Toast.makeText(AddNewTravelActivity.this, u_country + city,
+                Toast.LENGTH_SHORT).show();
+
+
     }
 
     @Override
@@ -68,6 +82,10 @@ public class AddNewTravelActivity extends AppCompatActivity implements View.OnCl
 // Create an ArrayAdapter using the string array and a default spinner layout
             adapter = ArrayAdapter.createFromResource(this,
                     R.array.africa_array, android.R.layout.simple_spinner_item);
+        }
+        else if (i == R.id.saveTravel) {
+            saveTravel();
+
         }
 
         // Specify the layout to use when the list of choices appears
