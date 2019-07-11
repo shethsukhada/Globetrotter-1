@@ -6,17 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".AddNewTravelActivity">
 
-
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <FrameLayout
-            android:id="@+id/frameLayout1"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"></FrameLayout>
+        android:layout_width="395dp"
+        android:layout_height="715dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,32 +26,28 @@
                 android:id="@+id/asia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="3"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_weight="3"
                 android:text="@string/asai" />
-
             <Button
                 android:id="@+id/africa"
                 android:layout_width="match_parent"
+                android:layout_weight="3"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_weight="3"
                 android:text="@string/africa" />
-
             <Button
                 android:id="@+id/europe"
                 android:layout_width="match_parent"
+                android:layout_weight="3"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_weight="3"
                 android:text="@string/europe" />
         </LinearLayout>
-
         <LinearLayout
-            android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -61,48 +56,50 @@
                 android:id="@+id/northAmerica"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="2"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_weight="2"
                 android:text="@string/northAmeria" />
-
             <Button
                 android:id="@+id/southAmerica"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="2"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_weight="2"
                 android:text="@string/southAmeria" />
         </LinearLayout>
 
 
-        <FrameLayout
-            android:id="@+id/frame"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"></FrameLayout>
-
         <LinearLayout
-            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="Select Country"
-                android:textAlignment="viewEnd"
+                android:layout_width="191dp"
+                android:layout_height="match_parent"
+                android:text="country"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <Spinner
                 android:id="@+id/country_spinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="2" />
+                android:layout_width="201dp"
+                android:layout_height="match_parent" />
         </LinearLayout>
 
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+        </FrameLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -110,89 +107,34 @@
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="Add City"
-                android:textAlignment="textEnd"
+                android:text="  city  "
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
             <EditText
-                android:id="@+id/city1"
-                android:layout_width="match_parent"
+                android:id="@+id/editText3"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="1"
+                android:ems="10"
                 android:inputType="textPersonName"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="Pick Travel Date"
-                android:textAlignment="viewEnd"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-            <EditText
-                android:id="@+id/travel_date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:inputType="date"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:text="Name" />
 
         </LinearLayout>
 
         <FrameLayout
-            android:id="@+id/frameLayout"
             android:layout_width="match_parent"
-            android:layout_height="50dp">
-
+            android:layout_height="150dp">
 
         </FrameLayout>
 
-        <LinearLayout
-            android:id="@+id/linearLayout4"
+        <Button
+            android:id="@+id/checkList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/checkList"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="clickList"
-                android:text="Check List" />
-
-            <Button
-                android:id="@+id/saveTravel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="clickList"
-                android:text="Save Travel" />
-
-        </LinearLayout>
-        <FrameLayout
-            android:id="@+id/frameLayout3"
-            android:layout_width="match_parent"
-            android:layout_height="10dp">
-
-
-        </FrameLayout>
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/excessbaggage" />
-
+            android:onClick="clickList"
+            android:text="check list" />
 
     </LinearLayout>
 
