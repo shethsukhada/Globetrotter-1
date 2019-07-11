@@ -15,14 +15,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "397340607688-4pplu2ib7t7omqg66hmngls0vu6pbcvb.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.globetrotter",
-            "certificate_hash": "49beb9bdee9c315379056f5ced05d08c131215b7"
-          }
-        },
-        {
           "client_id": "397340607688-q4kt6db7ocf8t0n78tt16pe2fboirkic.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
