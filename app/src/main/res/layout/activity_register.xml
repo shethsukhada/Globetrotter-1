@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="100dp"
+            android:layout_marginBottom="70dp"
             android:text="@string/app_name"
             android:textAllCaps="true"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
@@ -84,7 +84,6 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:onClick="login"
                 android:text="login" />
 
             <Button
@@ -95,7 +94,6 @@
                 android:layout_marginRight="12dp"
                 android:layout_toStartOf="@id/login_button"
                 android:layout_toLeftOf="@id/login_button"
-                android:onClick="register"
                 android:text="register" />
 
         </RelativeLayout>
