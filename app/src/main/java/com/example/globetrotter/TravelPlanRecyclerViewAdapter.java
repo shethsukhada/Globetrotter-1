@@ -10,7 +10,6 @@ import android.widget.TextView;
 import com.example.globetrotter.TravelPlanFragment.OnListFragmentInteractionListener;
 import com.example.globetrotter.dummy.DummyContent.DummyItem;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,10 +19,10 @@ import java.util.List;
  */
 public class TravelPlanRecyclerViewAdapter extends RecyclerView.Adapter<TravelPlanRecyclerViewAdapter.ViewHolder> {
 
-    private final List<Travel> mValues;
+    private final List<DummyItem> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    public TravelPlanRecyclerViewAdapter(ArrayList<Travel> items, OnListFragmentInteractionListener listener) {
+    public TravelPlanRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -38,8 +37,8 @@ public class TravelPlanRecyclerViewAdapter extends RecyclerView.Adapter<TravelPl
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).getCity());
-        holder.mContentView.setText(mValues.get(position).getTravel_date());
+        holder.mIdView.setText(mValues.get(position).id);
+        holder.mContentView.setText(mValues.get(position).content);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +61,7 @@ public class TravelPlanRecyclerViewAdapter extends RecyclerView.Adapter<TravelPl
         public final View mView;
         public final TextView mIdView;
         public final TextView mContentView;
-        public Travel mItem;
+        public DummyItem mItem;
 
         public ViewHolder(View view) {
             super(view);
