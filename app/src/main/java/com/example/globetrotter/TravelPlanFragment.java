@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import com.example.globetrotter.dummy.DummyContent;
 import com.example.globetrotter.dummy.DummyContent.DummyItem;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -31,11 +32,15 @@ public class TravelPlanFragment extends Fragment {
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
 
+    ArrayList<Travel> mTravelPlanArray;
+
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
     public TravelPlanFragment() {
+        mTravelPlanArray = new ArrayList<Travel>();
+
     }
 
     // TODO: Customize parameter initialization
@@ -71,7 +76,7 @@ public class TravelPlanFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new TravelPlanRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new TravelPlanRecyclerViewAdapter(mTravelPlanArray, mListener));
         }
         return view;
     }
@@ -106,6 +111,12 @@ public class TravelPlanFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onTravelListFragmentInteraction(DummyItem item);
+        void onTravelListFragmentInteraction(Travel item);
+    }
+
+    public void routeTravel(Travel travel){
+        if (!mTravelPlanArray.contains(travel)){
+            mTravelPlanArray.add(travel);
+        }
     }
 }

@@ -10,6 +10,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.example.globetrotter.dummy.DummyContent;
@@ -22,6 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity implements MapViewFragment.OnFragmentInteractionListener, TravelPlanFragment.OnListFragmentInteractionListener,NewsFragment.OnListFragmentInteractionListener {
 
+    private static final String TAG = "firebase";
     ViewPager mViewPager;
     FragmentAdapter adapter;
     FirebaseDatabase mDatabase;
@@ -48,14 +50,22 @@ public class MainActivity extends AppCompatActivity implements MapViewFragment.O
     }
 
     private void initDatabaseTravel() {
+
         mDatabase = FirebaseDatabase.getInstance();
         DatabaseReference ref = mDatabase.getReference("globletrotter");
 
         ValueEventListener listener = new ValueEventListener() {
+
+
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                TravelPlanFragment travelPlan = (TravelPlanFragment)adapter.getItem(1);
+
                 for (DataSnapshot child : dataSnapshot.getChildren()){
-                    
+                    Travel travel = child.getValue(Travel.class);
+                    travelPlan.routeTravel(travel);
+                    Log.e(TAG,"child"+" "+travel.getCity()+" "+travel.getTravel_date());
 
                 }
             }
@@ -65,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements MapViewFragment.O
 
             }
         };
+        ref.addValueEventListener(listener);
     }
 
     private void initViewPager() {
@@ -80,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements MapViewFragment.O
     }
 
     @Override
-    public void onTravelListFragmentInteraction(DummyContent.DummyItem item) {
+    public void onTravelListFragmentInteraction(Travel item) {
 
     }
 
