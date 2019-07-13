@@ -44,7 +44,7 @@ public class AddNewTravelActivity extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_travel);
 
-        // Buttons sukhada
+
         findViewById(R.id.asia).setOnClickListener(this);
         findViewById(R.id.africa).setOnClickListener(this);
         findViewById(R.id.northAmerica).setOnClickListener(this);
@@ -127,15 +127,13 @@ public class AddNewTravelActivity extends AppCompatActivity implements View.OnCl
         new firebasedatabasehelper_temp().add_tarvel_fb(travel, new firebasedatabasehelper_temp.DataStatus() {
             @Override
             public void DataIsLoaded(List<Travel> travel, List<String> keys) {
-                Toast.makeText(AddNewTravelActivity.this, u_country +
-                                u_city.getText().toString() + u_date.getText().toString(),
+                Toast.makeText(AddNewTravelActivity.this, "Travel Added Successfully" + u_date.getText().toString(),
                         Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void DataIsInserted() {
-                Toast.makeText(AddNewTravelActivity.this, u_country +
-                                u_city.getText().toString() + u_date.getText().toString(),
+                Toast.makeText(AddNewTravelActivity.this, "Travel Added Successfully",
                         Toast.LENGTH_SHORT).show();
 
             }
@@ -151,8 +149,7 @@ public class AddNewTravelActivity extends AppCompatActivity implements View.OnCl
             }
         });
 
-        Toast.makeText(AddNewTravelActivity.this, travel.getCity(),
-                Toast.LENGTH_SHORT).show();
+
     }
     //});
 

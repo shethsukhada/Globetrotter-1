@@ -1,3 +1,4 @@
+
 package com.example.globetrotter;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,9 +37,9 @@ public class AddActivity extends AppCompatActivity {
                 .insert("checklist",null,values);
 
         if (id > -1){
-            Toast.makeText(this,"adding complete",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Task Added",Toast.LENGTH_LONG).show();
         }else {
-            Toast.makeText(this,"failed",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Failed To Add Task",Toast.LENGTH_LONG).show();
         }
         Intent intent = new Intent(AddActivity.this, checkListActivity.class) ;
         startActivity(intent);

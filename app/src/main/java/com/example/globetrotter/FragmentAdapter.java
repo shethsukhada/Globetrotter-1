@@ -30,7 +30,7 @@ public class FragmentAdapter extends FragmentPagerAdapter {
         switch (position){
             case 0 : page = MapViewFragment.newInstance("one","two");break;
             case 1 : page = mtravelPlan;break;
-            case 2 : page = NewsFragment.newInstance(2);break;
+            case 2 : page = NewsFragment.newInstance(1);break;
 
             default: page = TravelPlanFragment.newInstance(1);break;
         }

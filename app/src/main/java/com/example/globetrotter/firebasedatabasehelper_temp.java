@@ -48,6 +48,7 @@ public class firebasedatabasehelper_temp {
                 for(DataSnapshot keyNode : dataSnapshot.getChildren()){
                     keys.add(keyNode.getKey());
                     Travel travel_l = keyNode.getValue(Travel.class);
+                    Log.d("adadsa" , travel_l.getCity());
                     travel.add(travel_l);
                 }
                 dataStatus.DataIsLoaded(travel,keys);

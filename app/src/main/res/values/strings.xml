@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">globetrotter</string>
+    <string name="app_name">Globetrotter</string>
     <string name="email_login">Email</string>
     <string name="password">Password</string>
     <string name="next">Next</string>
@@ -11,7 +11,7 @@
     <string name="northAmeria">North America </string>
     <string name="southAmeria">South America</string>
 
-    <string name="country_city">city name</string>
+    <string name="country_city">City Name</string>
     <string name="travel_date">2019/04/06~2019/08/07</string>
 
 
